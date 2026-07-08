@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-primary: #111827;
+  --color-secondary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-background: #ffffff;
+  --color-sidebar-bg: #f8fafc;
+
+  /* Font family */
+  --font-display: "Amiri", serif;
+
+  /* Page dimensions */
+  --page-width: 210mm;
+  --page-height: 297mm;
+}
+body {
+  padding: 40px;
+
+  font-family: "Amiri", serif;
+}
+.resume {
+  width: var(--page-width);
+
+  min-height: var(--page-height);
+
+  margin: auto;
+}
+
+/* ---------- Print Styles ---------- */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .resume {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  section,
+  article {
+    break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+  }
+}
